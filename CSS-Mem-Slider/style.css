@@ -188,6 +188,21 @@ label:active span {
 	}
 }
 
+@media(max-width:500px) {
+	.wrapper {
+		width: 80vw;
+		height: 100vw;
+		margin-bottom: 0;
+	}
+	.wrapper label {
+		width: 5vw;
+		height: 5vw;
+	}
+	.one-text {
+		font-size: 90%;
+	}
+}
+
 
 @media(max-width:400px) {
 	.wrapper {
