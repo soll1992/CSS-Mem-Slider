@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(37,40,42);
+}
+
+.wrapper {
+	margin: 100px auto 0;
+	position: relative;
+	width: 600px;
+	height: 535px;
+}
+
+.slider {
+	background-color: transparent;
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+	width: inherit;
+}
+
+.wrapper > input {
+	display: none;
+}
+
+.slides {
+	height: inherit;
+	position: absolute;
+	width: 600px;
+	height: 535px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.slide1 {
+	background-image: url(./assets/fish1.jpg);
+}
+.slide2 {
+	background-image: url(./assets/fish2.jpg); 
+}
+.slide3 {
+	background-image: url(./assets/fish2.jpg); 
+	
+}
+.slide4 {
+	background-image: url(./assets/fish4.jpg); 
+}
+
+.controls {
+	position: absolute;
+	right: 0;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+	border-radius: 50%;
+}
+
+.wrapper label:after {
+	border: 2px solid #ddd;
+	content: " ";
+	display: block;
+	height: 12px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+	width: 12px;
+	border-radius: 50%;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+	border-radius: 50%;
+}
+
+
+.wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background: #ddd;
+}
+
+.slides {
+	right: -1000px;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4 {
+	right: 0;
+	transition: 0.5s;
+}
+
+
