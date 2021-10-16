@@ -159,7 +159,8 @@ label:active span {
 
 @media(max-width:900px) {
 	.wrapper {
-		width: 27.9vw;
+		width: 50vw;
+		height: 61.5vw;
 	}
 	.bottom-conteiner {
 		flex-direction: column;
@@ -171,9 +172,6 @@ label:active span {
 	.controls {
 		margin: 0 auto;
 		order: 1;
-	}
-	.one-text {
-		font-size: 70%;
 	}
 }
 
@@ -197,9 +195,6 @@ label:active span {
 	.wrapper label {
 		width: 5vw;
 		height: 5vw;
-	}
-	.one-text {
-		font-size: 90%;
 	}
 }
 
