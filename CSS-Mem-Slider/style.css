@@ -6,21 +6,30 @@
 
 body {
 	background-color: rgb(37,40,42);
+	display: flex;
 }
 
+
 .wrapper {
-	margin: 100px auto 0;
-	position: relative;
-	width: 600px;
-	height: 535px;
+	display: flex;
+	flex-direction: column;
+	margin: 10% auto;
+	width: 30vw;
+	height: 35vw;
+}
+
+.slider-conteiner {
+	width: 100%;
+	height: 90%;
+	overflow: hidden;
 }
 
 .slider {
+	width: 400%;
+	height: 100%;
 	background-color: transparent;
-	height: inherit;
-	overflow: hidden;
-	position: relative;
-	width: inherit;
+	display: flex;	
+	transition: 0.5s;
 }
 
 .wrapper > input {
@@ -28,31 +37,31 @@ body {
 }
 
 .slides {
-	height: inherit;
-	position: absolute;
-	width: 600px;
-	height: 535px;
-	background-size: cover;
+	width: 100%;
+	height: 100%;
+	background-size: contain;
 	background-repeat: no-repeat;
+	animation-duration: 0.3s;
+    animation-timing-function: linear;
 }
 
 .slide1 {
-	background-image: url(./assets/fish1.jpg);
+	background-image: url(./assets/mem1.jpg);
 }
 .slide2 {
-	background-image: url(./assets/fish2.jpg); 
+	background-image: url(./assets/mem2.jpg); 
 }
 .slide3 {
-	background-image: url(./assets/fish2.jpg); 
+	background-image: url(./assets/mem3.jpg); 
 	
 }
 .slide4 {
-	background-image: url(./assets/fish4.jpg); 
+	background-image: url(./assets/mem4.jpg); 
 }
 
 .controls {
-	position: absolute;
-	right: 0;
+	margin-left: auto;
+	margin-right: 0;
 }
 
 .wrapper label {
@@ -77,17 +86,6 @@ body {
 	border-radius: 50%;
 }
 
-.wrapper label {
-	cursor: pointer;
-	display: inline-block;
-	height: 8px;
-	margin: 25px 12px 0 16px;
-	position: relative;
-	width: 8px;
-	border-radius: 50%;
-}
-
-
 .wrapper label:hover, 
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
@@ -97,16 +95,30 @@ body {
 }
 
 .slides {
-	right: -1000px;
-	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transition: ease-in-out .5s;
 }
 
-#slide1:checked ~ .slider > .slide1,
+/* #slide1:checked ~ .slider > .slide1,
 #slide2:checked ~ .slider > .slide2,
 #slide3:checked ~ .slider > .slide3,
 #slide4:checked ~ .slider > .slide4 {
-	right: 0;
+	display: block;
+	animation-name: memes;
 	transition: 0.5s;
+} */
+
+#slide1:checked ~ .slider-conteiner > .slider {
+	transform: translateX(0%);
 }
 
+#slide2:checked ~ .slider-conteiner > .slider {
+	transform: translateX(-25%);
+}
 
+#slide3:checked ~ .slider-conteiner > .slider {
+	transform: translateX(-50%);
+}
+
+#slide4:checked ~ .slider-conteiner > .slider {
+	transform: translateX(-75%);
+}
